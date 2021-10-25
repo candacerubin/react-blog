@@ -7,7 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from 'apollo-link-context';
 
-import App from './App';
+import App from './App.js';
 
 const httpLink = createHttpLink({
 	uri: 'http://localhost:5000/graphql',

@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import ApolloProvider from './ApolloProvider.jsx';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<ApolloProvider />
-	</React.StrictMode>,
+	<ApolloProvider />,
+
 	document.getElementById('root')
 );

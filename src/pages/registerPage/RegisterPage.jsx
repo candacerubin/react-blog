@@ -8,7 +8,7 @@ import { useForm } from '../../util/hooks';
 
 export default function RegisterPage() {
 	const { onChange, onSubmit, values } = useForm(handleOnSubmit, {
-		username: '',
+		displayName: '',
 		email: '',
 		password: '',
 		confirmPassword: '',
@@ -32,10 +32,10 @@ export default function RegisterPage() {
 				<h1>Register User</h1>
 				<Form.Input
 					onChange={onChange}
-					value={values.username}
-					placeholder='Enter Username'
+					value={values.displayName}
+					placeholder='Enter Display Name'
 					type='text'
-					name='username'
+					name='displayName'
 				/>
 				<Form.Input
 					onChange={onChange}
@@ -68,14 +68,14 @@ export default function RegisterPage() {
 
 const REGISTER_USER = gql`
 	mutation register(
-		$username: String!
+		$displayName: String!
 		$email: String!
 		$password: String!
 		$confirmPassword: String!
 	) {
 		register(
 			registerInput: {
-				username: $username
+				displayName: $displayName
 				email: $email
 				password: $password
 				confirmPassword: $confirmPassword
@@ -83,7 +83,7 @@ const REGISTER_USER = gql`
 		) {
 			id
 			email
-			username
+			displayName
 			token
 			createdAt
 		}
